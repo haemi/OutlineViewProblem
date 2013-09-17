@@ -18,6 +18,9 @@
 		F8838AE417E843C200383A1C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8838AC317E843C100383A1C /* Cocoa.framework */; };
 		F8838AEC17E843C200383A1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8838AEA17E843C200383A1C /* InfoPlist.strings */; };
 		F8838AEE17E843C200383A1C /* OutlineViewProblemTestProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8838AED17E843C200383A1C /* OutlineViewProblemTestProjectTests.m */; };
+		F8838B0117E84F7900383A1C /* FNWrapperView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8838B0017E84F7900383A1C /* FNWrapperView.m */; };
+		F8838B0417E8572B00383A1C /* FNCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8838B0317E8572B00383A1C /* FNCellView.m */; };
+		F8838B0617E8573B00383A1C /* FNCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8838B0517E8573B00383A1C /* FNCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,11 @@
 		F8838AE917E843C200383A1C /* OutlineViewProblemTestProjectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OutlineViewProblemTestProjectTests-Info.plist"; sourceTree = "<group>"; };
 		F8838AEB17E843C200383A1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F8838AED17E843C200383A1C /* OutlineViewProblemTestProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutlineViewProblemTestProjectTests.m; sourceTree = "<group>"; };
+		F8838AFF17E84F7900383A1C /* FNWrapperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNWrapperView.h; sourceTree = "<group>"; };
+		F8838B0017E84F7900383A1C /* FNWrapperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNWrapperView.m; sourceTree = "<group>"; };
+		F8838B0217E8572B00383A1C /* FNCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNCellView.h; sourceTree = "<group>"; };
+		F8838B0317E8572B00383A1C /* FNCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNCellView.m; sourceTree = "<group>"; };
+		F8838B0517E8573B00383A1C /* FNCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNCellView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,11 @@
 				F8838AD517E843C100383A1C /* FNAppDelegate.h */,
 				F8838AD617E843C100383A1C /* FNAppDelegate.m */,
 				F8838AD817E843C100383A1C /* MainMenu.xib */,
+				F8838AFF17E84F7900383A1C /* FNWrapperView.h */,
+				F8838B0017E84F7900383A1C /* FNWrapperView.m */,
+				F8838B0217E8572B00383A1C /* FNCellView.h */,
+				F8838B0317E8572B00383A1C /* FNCellView.m */,
+				F8838B0517E8573B00383A1C /* FNCellView.xib */,
 				F8838ADB17E843C100383A1C /* Images.xcassets */,
 				F8838ACA17E843C100383A1C /* Supporting Files */,
 			);
@@ -231,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8838B0617E8573B00383A1C /* FNCellView.xib in Resources */,
 				F8838ACE17E843C100383A1C /* InfoPlist.strings in Resources */,
 				F8838ADC17E843C100383A1C /* Images.xcassets in Resources */,
 				F8838AD417E843C100383A1C /* Credits.rtf in Resources */,
@@ -255,6 +269,8 @@
 			files = (
 				F8838AD717E843C100383A1C /* FNAppDelegate.m in Sources */,
 				F8838AD017E843C100383A1C /* main.m in Sources */,
+				F8838B0417E8572B00383A1C /* FNCellView.m in Sources */,
+				F8838B0117E84F7900383A1C /* FNWrapperView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +404,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OutlineViewProblemTestProject/OutlineViewProblemTestProject-Prefix.pch";
 				INFOPLIST_FILE = "OutlineViewProblemTestProject/OutlineViewProblemTestProject-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -401,6 +418,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OutlineViewProblemTestProject/OutlineViewProblemTestProject-Prefix.pch";
 				INFOPLIST_FILE = "OutlineViewProblemTestProject/OutlineViewProblemTestProject-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -8,8 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface FNAppDelegate : NSObject <NSApplicationDelegate>
+@interface FNAppDelegate : NSObject <NSApplicationDelegate, NSOutlineViewDataSource, NSOutlineViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSScrollView *scrollView;
+@property (assign) IBOutlet NSView *documentView;
 
 @end
