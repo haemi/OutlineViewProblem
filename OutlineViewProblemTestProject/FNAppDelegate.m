@@ -9,12 +9,15 @@
 #import "FNAppDelegate.h"
 #import "FNWrapperView.h"
 #import "FNCellView.h"
+#import "CustomView.h"
+#import "HeaderView.h"
 
 @interface FNAppDelegate ()
 
 @property (nonatomic, strong) FNWrapperView *wrapperView;
 @property (nonatomic, strong) NSOutlineView *outlineView;
 
+@property (nonatomic, strong) NSWindow *mainWindow;
 @end
 
 @implementation FNAppDelegate
@@ -24,43 +27,28 @@
     [self createOutlineView];
 }
 
+
 - (void)createOutlineView {
-    self.wrapperView = [[FNWrapperView alloc] initWithFrame:CGRectZero];
+
+    CustomView *customView = [[CustomView alloc] initWithFrame:[self.scrollView.documentView bounds]];
+    self.scrollView.documentView = customView;
     
-    self.outlineView = [[NSOutlineView alloc] initWithFrame:CGRectZero];
-    self.outlineView.delegate = self;
+    HeaderView *headerView = [[HeaderView alloc] initWithFrame:NSMakeRect(0,0,customView.frame.size.width,
+                                                                          50)];
+    
+    [customView addSubview:headerView];
+    
+    self.outlineView = [[NSOutlineView alloc] initWithFrame:NSMakeRect(0,50,customView.frame.size.width,
+                                                                       customView.frame.size.height)];
+    NSTableColumn *outlineColumn = [[NSTableColumn alloc] initWithIdentifier:@"tableColumn"];
+    [self.outlineView addTableColumn:outlineColumn];
+    self.outlineView.outlineTableColumn = outlineColumn;
+    self.outlineView.headerView = nil;
     self.outlineView.dataSource = self;
-    self.outlineView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.outlineView.backgroundColor = [NSColor whiteColor];
-    
-    self.scrollView.backgroundColor = [NSColor blueColor];
-    
-    self.wrapperView.documentView = self.documentView;
-    self.wrapperView.scrollView = self.scrollView;
-    
-    NSTableColumn *tableColumn = [[NSTableColumn alloc] initWithIdentifier:@"tableColumn"];
-    [tableColumn setEditable: NO];
-    [self.outlineView addTableColumn:tableColumn];
-    [self.outlineView setOutlineTableColumn:tableColumn];
+    self.outlineView.delegate = self;
     NSNib *diffChunkContentCellView = [[NSNib alloc] initWithNibNamed:[FNCellView className] bundle:nil];
     [self.outlineView registerNib:diffChunkContentCellView forIdentifier:@"FNCellView"];
-    
-    NSView *headerView = [[NSView alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-    headerView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self.documentView addSubview:headerView];
-    [self.wrapperView addSubview:self.outlineView];
-    [self.documentView addSubview:self.wrapperView];
-    
-    NSDictionary *views = @{@"outlineView": self.outlineView, @"wrapperView": self.wrapperView, @"documentView": self.documentView, @"headerView": headerView};
-    NSMutableArray *constraints = [NSMutableArray new];
-    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[wrapperView]|" options:0 metrics:nil views:views]];
-    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[headerView]|" options:0 metrics:nil views:views]];
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[headerView(50)]-10-[wrapperView(50)]" options:0 metrics:nil views:views];
-    [constraints addObjectsFromArray:verticalConstraints];
-    
-    [self.documentView removeConstraints:self.documentView.constraints];
-    [self.documentView addConstraints:constraints];
+    [customView addSubview:self.outlineView];
 }
 
 - (NSArray *)elements {

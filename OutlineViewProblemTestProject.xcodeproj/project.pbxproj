@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5335429017EA0058004616F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5335428F17EA0058004616F3 /* QuartzCore.framework */; };
+		53D941DF17EA6A0200A701EB /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D941DE17EA6A0200A701EB /* CustomView.m */; };
+		53D941E217EA6CBC00A701EB /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D941E117EA6CBC00A701EB /* HeaderView.m */; };
 		F8838AC417E843C100383A1C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8838AC317E843C100383A1C /* Cocoa.framework */; };
 		F8838ACE17E843C100383A1C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8838ACC17E843C100383A1C /* InfoPlist.strings */; };
 		F8838AD017E843C100383A1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8838ACF17E843C100383A1C /* main.m */; };
@@ -34,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5335428F17EA0058004616F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		53D941DD17EA6A0200A701EB /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		53D941DE17EA6A0200A701EB /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		53D941E017EA6CBC00A701EB /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		53D941E117EA6CBC00A701EB /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		F8838AC017E843C100383A1C /* OutlineViewProblemTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutlineViewProblemTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8838AC317E843C100383A1C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F8838AC617E843C100383A1C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -65,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5335429017EA0058004616F3 /* QuartzCore.framework in Frameworks */,
 				F8838AC417E843C100383A1C /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +112,7 @@
 		F8838AC217E843C100383A1C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5335428F17EA0058004616F3 /* QuartzCore.framework */,
 				F8838AC317E843C100383A1C /* Cocoa.framework */,
 				F8838AE217E843C200383A1C /* XCTest.framework */,
 				F8838AC517E843C100383A1C /* Other Frameworks */,
@@ -123,6 +133,10 @@
 		F8838AC917E843C100383A1C /* OutlineViewProblemTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				53D941DD17EA6A0200A701EB /* CustomView.h */,
+				53D941DE17EA6A0200A701EB /* CustomView.m */,
+				53D941E017EA6CBC00A701EB /* HeaderView.h */,
+				53D941E117EA6CBC00A701EB /* HeaderView.m */,
 				F8838AD517E843C100383A1C /* FNAppDelegate.h */,
 				F8838AD617E843C100383A1C /* FNAppDelegate.m */,
 				F8838AD817E843C100383A1C /* MainMenu.xib */,
@@ -267,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D941DF17EA6A0200A701EB /* CustomView.m in Sources */,
+				53D941E217EA6CBC00A701EB /* HeaderView.m in Sources */,
 				F8838AD717E843C100383A1C /* FNAppDelegate.m in Sources */,
 				F8838AD017E843C100383A1C /* main.m in Sources */,
 				F8838B0417E8572B00383A1C /* FNCellView.m in Sources */,
@@ -483,6 +499,7 @@
 				F8838AF317E843C200383A1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8838AF417E843C200383A1C /* Build configuration list for PBXNativeTarget "OutlineViewProblemTestProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +508,7 @@
 				F8838AF617E843C200383A1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
